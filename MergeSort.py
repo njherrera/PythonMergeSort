@@ -8,7 +8,7 @@ def mergeSort(list):
     # call mergeSort on left
     # call mergeSort on right
 
-    # return
+    # return merge(left, right)
 
 def merge(left, right):
     # make new empty list (result)
