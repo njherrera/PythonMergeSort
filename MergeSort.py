@@ -21,9 +21,15 @@ def mergeSort(list):
 
 def merge(left, right):
     # make new empty list (result)
+    result = []
+
+
     # while left and right are not empty:
         # if the first item of left is <= first item of right, append first item of left to result
         # else append first item of right to result
+    if not left and not right:
+        result.append(left[0])
+        left = left[1:]
 
     # now either left or right is not empty
     # while left is not empty:
