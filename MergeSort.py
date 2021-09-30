@@ -27,15 +27,24 @@ def merge(left, right):
     # while left and right are not empty:
         # if the first item of left is <= first item of right, append first item of left to result
         # else append first item of right to result
-    if not left and not right:
-        result.append(left[0])
-        left = left[1:]
+    if left is not None and right is not None:
+        if left[0] <= right[0]:
+            result.append(left[0])
+            left = left[1:]
+        else:
+            result.append(right[0])
+            right = right[1:]
 
     # now either left or right is not empty
     # while left is not empty:
         # append first item of left to result
-
+    while left is not None:
+        result.append(left[0])
+        left = left[1:]
     # while right is not empty:
-        # append first item of right to result
-
+    # append first item of right to result
+    while right is not None:
+        result.append(right[0])
+        right = right[1:]
     # return result
+    return result
