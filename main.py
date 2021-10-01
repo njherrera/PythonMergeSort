@@ -7,4 +7,4 @@ def main():
     print(sortedTestList)
 
 if __name__=="__main__":
-    (main)
+    (main())

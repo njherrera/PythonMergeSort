@@ -17,6 +17,7 @@ def mergeSort(list):
     rightSide = mergeSort(rightSide)
 
     # return merge(left, right)
+    print("new call to merge")
     return merge(leftSide, rightSide)
 
 def merge(left, right):
@@ -27,24 +28,28 @@ def merge(left, right):
     # while left and right are not empty:
         # if the first item of left is <= first item of right, append first item of left to result
         # else append first item of right to result
-    if left is not None and right is not None:
+    if left and right:
         if left[0] <= right[0]:
             result.append(left[0])
-            left = left[1:]
+            del left[0]
         else:
             result.append(right[0])
-            right = right[1:]
+            del right[0]
 
     # now either left or right is not empty
     # while left is not empty:
         # append first item of left to result
-    while left is not None:
+    while left:
+        print("current left list: ", left, " about to append: ", left[0])
         result.append(left[0])
-        left = left[1:]
+        print("current result: ", result)
+        del left[0]
     # while right is not empty:
     # append first item of right to result
-    while right is not None:
+    while right:
+        print("current right list: ", right, " about to append: ", right[0])
         result.append(right[0])
-        right = right[1:]
+        print("current result: ", result)
+        del right[0]
     # return result
     return result
