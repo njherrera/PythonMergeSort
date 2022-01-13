@@ -1,3 +1,5 @@
+# problem seems to be the right list - somehow with the test input it ends up being [9, 3, 4]
+# since 9 is at the front of the right list, it doesn't get added to the result until all the left elements have bheen added, leaving the right portion unsorted
 def mergeSort(list):
     # if list is length 1, return list
     if len(list) <= 1:
@@ -17,7 +19,6 @@ def mergeSort(list):
     rightSide = mergeSort(rightSide)
 
     # return merge(left, right)
-    print("new call to merge")
     return merge(leftSide, rightSide)
 
 def merge(left, right):
@@ -40,16 +41,12 @@ def merge(left, right):
     # while left is not empty:
         # append first item of left to result
     while left:
-        print("current left list: ", left, " about to append: ", left[0])
         result.append(left[0])
-        print("current result: ", result)
         del left[0]
     # while right is not empty:
     # append first item of right to result
-    while right:
-        print("current right list: ", right, " about to append: ", right[0])
+    while right: # right now, we end up with right having 3 items in it, which are all added in one go
         result.append(right[0])
-        print("current result: ", result)
         del right[0]
     # return result
     return result
