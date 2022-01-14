@@ -29,7 +29,7 @@ def merge(left, right):
     # while left and right are not empty:
         # if the first item of left is <= first item of right, append first item of left to result
         # else append first item of right to result
-    if left and right:
+    while left and right:
         if left[0] <= right[0]:
             result.append(left[0])
             del left[0]
